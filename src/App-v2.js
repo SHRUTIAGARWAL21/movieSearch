@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Rating from "./Rating";
 
+const apikey = process.env.REACT_APP_KEY;
 const tempMovieData = [
   {
     imdbID: "tt1375666",
