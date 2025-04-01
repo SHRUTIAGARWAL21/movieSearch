@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Rating from "./Rating";
 
-const apikey = process.env.REACT_APP_KEY;
+const API_KEY = process.env.REACT_APP_KEY;
 const tempMovieData = [
   {
     imdbID: "tt1375666",
@@ -105,7 +105,7 @@ export default function App() {
           setError("");
 
           const res = await fetch(
-            `https://www.omdbapi.com/?apikey=${apikey}&s=${query}`,
+            `https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
             { signal: controller.signal }
           );
 
@@ -362,7 +362,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       async function getMovieDetails() {
         setIsLoading(true);
         const res = await fetch(
-          `https://www.omdbapi.com/?apikey=${apikey}&i=${selectedId}`
+          `https://www.omdbapi.com/?apikey=${API_KEY}&i=${selectedId}`
         );
         const data = await res.json();
         setMovie(data);
